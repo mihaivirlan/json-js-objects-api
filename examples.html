@@ -1,0 +1,73 @@
+JSON: JavaScript Object Notation
+
+<div id="output"></div>
+<script>
+var myObj = {"people":[
+{
+    "firstName":"Laurence",
+    "lastName":"Smith",
+    "age":50
+},
+{
+    "firstName":"John",
+    "lastName":"Jone",
+    "age":50
+}]};
+myObj.people[1].monthsknown = "18";
+
+//sessionStorage.setItem('friend', JSON.stringify(myObj) );
+
+var myList = JSON.parse(sessionStorage.getItem('friend'));
+console.log(myList);
+
+
+var strpeople = JSON.stringify(myObj);
+//console.log(strpeople);
+
+var myfriends = JSON.parse(strpeople);
+//console.log(myfriends);
+
+
+//console.log(myObj);
+document.getElementById('output').innerHTML = myObj.people[0].lastName +
+' ' + myObj.people[1].firstName;
+
+
+var friends = [];
+    friends[0] = 'one';
+    friends[1] = 'two';
+    friends[5] = 'five';
+
+    friends['second'] = "Test Name";
+    friends['first'] = "Test Name";
+
+    // console.log(JSON.stringify(friends));
+
+    var myjson = JSON.parse(JSON.stringify(friends));
+
+    console.log(friends);
+    console.log(myjson);
+
+
+    var myObj = {
+    "friends":[{
+        "first":"Mike",
+        "last":"Jones"
+    },
+    {
+        "first":"John",
+        "last":"Smith"
+    }]
+}
+console.log(myObj);
+
+var users = myObj.friends;
+console.log(users);
+
+for(var x in users) {
+    var y = "st";
+    console.log(x + "=" + users[x].first + ""+ users[x]["la" + y]);
+    
+}
+    
+</script>

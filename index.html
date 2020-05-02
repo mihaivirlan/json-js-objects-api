@@ -10,11 +10,14 @@ JSON: JavaScript Object Notation
 <script>
     $(document).ready(function(){
         $("#btn").click(function(){
-             $.getJSON("https://api.mixcloud.com/spartacus/party-time/",
+             $.getJSON("https://api.mixcloud.com/popular/",
                 function(data){
-                    console.log(data);
-                    $("#output").append('<div class="joke">' + data.description + '</div>');
-                    //$("#output").append('<div class="joke">' + data.value.joke + '</div>');
+                console.log(data);
+                $.each(data.data,function(i,key){
+                    console.log(key);
+                    $("#output").append('<div class="joke">'+
+                    key["name"] + '<img src="'+key.pictures["320wx320h"]+'"></div>');
+                })
             })
         })
     })

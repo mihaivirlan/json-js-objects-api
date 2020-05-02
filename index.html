@@ -10,23 +10,12 @@ JSON: JavaScript Object Notation
 <script>
     $(document).ready(function(){
         $("#btn").click(function(){
-             $.getJSON("http://api.icndb.com/jokes/random?firstName=John&amp;lastName=Doe",
+             $.getJSON("https://api.mixcloud.com/spartacus/party-time/",
                 function(data){
-                $("#output").append('<div class="joke">' + data.value.joke + '</div>');
+                    console.log(data);
+                    $("#output").append('<div class="joke">' + data.description + '</div>');
+                    //$("#output").append('<div class="joke">' + data.value.joke + '</div>');
             })
         })
     })
-// var myObj = {
-//     "people":[{
-//         "firstname":"Laurence",
-//         "lastname":"Smith",
-//         "age":50
-//     },
-//     {
-//         "firstname":"John",
-//         "lastname":"Jone",
-//         "age":55
-//     }]
-// };
-
 </script>
